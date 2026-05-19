@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-light: #F8FAFC;
+  --color-bg-dark: #020617;
+
+  --color-card-light: #FFFFFF;
+  --color-card-dark: #111827;
+
+  --color-primary-text-light: #0F172A;
+  --color-primary-text-dark: #F8FAFC;
+
+  --color-secondary-text-light: #475569;
+  --color-secondary-text-dark: #94A388;
+
+  --color-border-light: #E2E8F0;
+  --color-border-dark: #1E293B;
+
+  --color-primary-blue-light: #2563EB;
+  --color-primary-blue-dark: #3B82F6;
+
+  --color-cyan-accent-light: #06B6D4;
+  --color-cyan-accent-dark: #22D3EE;
+
+  --color-hover-light: #1D4ED8;
+  --color-hover-dark: #1E293B;
+
+  --color-highlight: #CFFAFE;
+  --color-glow: #0891B2;
+}
+
+/* Education timeline spine */
+.edu-timeline {
+  position: relative;
+  padding-left: 2rem; /* space for the line */
+}
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.75rem; /* adjust to align with items */
+  width: 2px;
+  height: 100%;
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+}
+
+/* Each timeline item dot */
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -0.25rem; /* centers dot on line */
+  top: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  border: 2px solid #fff; /* white border for contrast */
+}
+
+.active-link {
+  @apply border-primary-blue-light;
+  transition: all 0.3s ease;
+}
